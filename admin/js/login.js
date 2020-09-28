@@ -15,7 +15,7 @@
     // 发送用户登录的 post 请求，请求账号登录信息
     $.ajax({
       type: 'post',
-      url: 'http://127.0.0.1:8080/api/v1/admin/user/login',
+      url: window.BigNews.user_login,
       data: {
         username,
         password
