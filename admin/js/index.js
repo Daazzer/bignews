@@ -1,4 +1,5 @@
 (() => {
+  // 渲染页面
   $.ajax({
     url: window.BigNews.user_info,
     dataType: 'json',
@@ -7,6 +8,14 @@
         $('#nickname').text(res.data.nickname);
         $('img.user_avatar').prop('src', res.data.userPic);
       }
+    }
+  });
+
+  // 用户登出
+  $('#logout').click(() => {
+    if (confirm('真的要退出吗？')) {
+      window.localStorage.removeItem('bignews_token');
+      window.location.href = 'login.html';
     }
   });
 
