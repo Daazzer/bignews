@@ -10,11 +10,12 @@
   <link rel="stylesheet" type="text/css" href="css/iconfont.css" />
   <link rel="stylesheet" type="text/css" href="css/main.css" />
   <!-- 引入bootstrap的css文件 -->
-  <link rel="stylesheet" href="./libs/bootstrap/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="libs/bootstrap/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="css/login.css">
   <!-- 引入jq文件 -->
-  <script src="./libs/jquery-1.12.4.min.js"></script>
+  <script src="libs/jquery-1.12.4.min.js"></script>
   <!-- 引入bootstrap的js文件 -->
-  <script src="./libs/bootstrap/js/bootstrap.min.js"></script>
+  <script src="libs/bootstrap/js/bootstrap.min.js"></script>
 </head>
 
 <body>
@@ -31,13 +32,31 @@
       <form class="login_form">
         <i class="iconfont icon-user"></i>
         <i class="iconfont icon-key"></i>
-        <input type="text" class="input_txt" placeholder="邮箱/手机号" />
-        <input type="password" class="input_pass" placeholder="密码" />
-        <input type="submit" class="input_sub" value="登 录" />
+        <input name="username" id="username" type="text" class="input_txt" placeholder="邮箱/手机号" />
+        <input name="password" id="password" type="password" class="input_pass" placeholder="密码" />
+        <input type="submit" class="input_sub" value="登 录" id="loginBtn" />
       </form>
     </div>
   </div>
 
+  <div class="modal fade" tabindex="-1" role="dialog" id="loginModal">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+              aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title">提示</h4>
+        </div>
+        <div class="modal-body">
+          <p class="modal-message"></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" id="modalBtn" data-dismiss="modal">关闭</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="js/login.js"></script>
 </body>
 
 </html>
