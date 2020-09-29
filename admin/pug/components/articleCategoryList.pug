@@ -1,0 +1,9 @@
+if articleCategoryItems
+  each articleCategoryItem in articleCategoryItems
+    tr
+      td= articleCategoryItem.name
+      td= articleCategoryItem.slug
+      td.text-center.
+        #[button.btn.btn-info.btn-xs.btn-edit(type="button" data-toggle="modal" data-target="#articleCategoryModal" data-id=articleCategoryItem.id) 编辑]
+        #[button.btn.btn-danger.btn-xs.btn-del(type="button" data-id=articleCategoryItem.id) 删除]
+else
