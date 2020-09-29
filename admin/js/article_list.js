@@ -29,6 +29,11 @@ function renderPage(currentPage = 1) {
   });
 }
 
+/**
+ * 渲染分页器
+ * @param {number} currentPage 当前页数
+ * @param {number} totalPages 总页数
+ */
 function setPaginatior(currentPage, totalPages) {
   $('.pagination').bootstrapPaginator({
     //设置版本号
@@ -53,7 +58,6 @@ function setPaginatior(currentPage, totalPages) {
     },
     // 当单击操作按钮的时候, 执行该函数, 调用ajax渲染页面
     onPageClicked(event, originalEvent, type, page) {
-      // 把当前点击的页码赋值给currentPage, 调用ajax,渲染页面
       renderPage(page);
     }
   });
