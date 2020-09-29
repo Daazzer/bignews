@@ -1,6 +1,6 @@
 (() => {
   $.ajax({
-    url: window.BigNews.user_detail,
+    url: window.bignews.user_detail,
     dataType: 'json',
     success(res) {
       if (res.code === 200) {
@@ -26,7 +26,7 @@
 
     $.ajax({
       type: 'post',
-      url: window.BigNews.user_edit,
+      url: window.bignews.user_edit,
       data: userEditFd,
       contentType: false,
       processData: false,
@@ -40,7 +40,7 @@
             const indexPage = window.parent;
             // 渲染页面
             indexPage.$.ajax({
-              url: window.BigNews.user_info,
+              url: window.bignews.user_info,
               dataType: 'json',
               success(res) {
                 if (res.code === 200) {

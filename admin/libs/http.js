@@ -1,6 +1,6 @@
 ((w) => {
   const baseURL = 'http://localhost:8080/api/v1';
-  const BigNews = {
+  const bignews = {
     baseURL: baseURL,//基地址
     user_login: baseURL + '/admin/user/login',//用户登录
     user_info: baseURL + '/admin/user/info',//用户信息
@@ -22,5 +22,5 @@
     comment_delete: baseURL + '/admin/comment/delete',//文章评论删除
   };
   //暴露接口
-  w.BigNews = BigNews;
+  w.bignews = bignews;
 })(window);

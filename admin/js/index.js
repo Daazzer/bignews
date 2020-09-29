@@ -1,7 +1,7 @@
 (() => {
   // 渲染页面
   $.ajax({
-    url: window.BigNews.user_info,
+    url: window.bignews.user_info,
     dataType: 'json',
     success(res) {
       if (res.code === 200) {
