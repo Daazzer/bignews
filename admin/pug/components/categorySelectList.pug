@@ -1,0 +1,5 @@
+if categoryItems
+  option(value="") 所有分类
+  each categoryItem in categoryItems
+    option(value=categoryItem.id)= categoryItem.name
+else

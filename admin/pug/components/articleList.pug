@@ -1,0 +1,12 @@
+if articles
+  each article in articles
+    tr
+      td= article.title
+      td= article.author
+      td= article.category
+      td.text-center= article.date
+      td.text-center= article.state
+      td.text-center.
+        #[a.btn.btn-default.btn-xs(href=`article_edit.html?id=${article.id}` data-id=article.id) 编辑]
+        #[a.btn.btn-danger.btn-xs.delete(href="javascript:void(0);" data-id=article.id) 删除]
+else

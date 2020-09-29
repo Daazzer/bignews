@@ -1,4 +1,20 @@
 ((w) => {
+  $.ajaxSetup({
+    // 全局配置请求头
+    beforeSend(xhr) {
+      const bignewsToken = window.localStorage.getItem('bignews_token');
+      if (bignewsToken && !(/\/login/.test(this.url))) {
+        xhr.setRequestHeader('Authorization', bignewsToken);
+      }
+    },
+    // 登录验证路由拦截
+    error(xhr, status, err) {
+      if (err === 'Forbidden') {
+        alert('请先登录');
+        window.location.href = 'login.html';
+      }
+    }
+  });
   const baseURL = 'http://localhost:8080/api/v1';
   const bignews = {
     baseURL: baseURL,//基地址
