@@ -68,7 +68,7 @@
     $('#inputCover').change(e => {
       const file = e.target.files[0];
       const url = URL.createObjectURL(file);
-      $('#acticleCover').prop('src', url);
+      $('#articleCover').prop('src', url);
     });
 
     $('#form').on('click', '#editBtn, #draftBtn', e => {
@@ -119,7 +119,8 @@
         success(res) {
           alert(res.msg);
           if (res.code === 200) {
-            window.location.href = 'article_list.html';
+            // 回到 article_list.html 页面
+            $('.level02>li:eq(0) a', window.parent.document)[0].click();
           }
         },
         error(xhr, status) {

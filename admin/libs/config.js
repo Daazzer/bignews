@@ -1,7 +1,11 @@
 (() => {
   $(() => {
+    // 如果是文章发布页则显示现在的时间，否则不显示时间
+    const url = window.location.href;
+    const isArticlePage = /article_release/.test(url);
     // 渲染日期
     jeDate("#releaseTime", {
+      isinitVal: isArticlePage,
       format: 'YYYY-MM-DD'
     });
 
