@@ -21,8 +21,12 @@
           // 根据响应数据渲染文章列表
           const acticleListHTML = window.articleList({ articles: res.data.data });
           $('#acticleTable tbody').html(acticleListHTML);
+          let totalPage = res.data.totalPage;
+          if (totalPage <= 0 || isNaN(totalPage)) {
+            totalPage = 1;
+          }
           // 根据响应的数据渲染分页器
-          setPaginatior(currentPage, res.data.totalPage);
+          setPaginatior(currentPage, totalPage);
         } else {
           alert(res.msg);
         }
