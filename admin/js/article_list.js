@@ -76,7 +76,7 @@ $.ajax({
   dataType: 'json',
   success(res) {
     if (res.code === 200) {
-      const categoryHTML = window.categorySelectList({ categoryItems: res.data });
+      const categoryHTML = window.categorySelectList({ categoryItems: res.data, hasAll: true });
       $('#selCategory').html(categoryHTML);
     } else {
       alert(res.msg);
