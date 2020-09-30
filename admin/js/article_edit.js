@@ -32,15 +32,16 @@
           if (res.code === 200) {
             const { title, cover, date, content, categoryId } = res.data;
             $('#inputTitle').val(title);
-            $('#acticleCover').prop('src', cover);
+            $('#articleCover').prop('src', cover);
             $('#releaseTime').val(date);
             $('#categoryId').val(categoryId);
+
             /*
             细节：由于tinymce比较复杂，加载需要时间。
-            一旦网速过快，就有可能导致数据已经返回，但是插件还没加载完的情况
-            解决方案：使用定时器延迟加载（可以添加一个loading动画迷惑用户）
+            一旦网速过快，就有可能导致数据已经返回，但是插件还没加载完的情况，导致数据显示不出来而报错
+            解决方案：绑定 init 事件让富文本编辑器初始化以后再渲染
              */
-            setTimeout(() => tinymce.activeEditor.setContent(content), 200);
+            tinymce.activeEditor.on('init', () => tinymce.activeEditor.setContent(content));
           } else {
             alert(res.msg);
           }
