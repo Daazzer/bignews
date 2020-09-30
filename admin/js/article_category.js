@@ -46,7 +46,7 @@
           // 如果创建成功则渲染页面，如果创建失败则提示信息
           if (res.code === 201) {
             $('#articleCategoryModal').modal('hide');
-            $('#articleCategoryModal').off('hidden.bs.modal').on('hidden.bs.modal', () => {
+            $('#articleCategoryModal').on('hidden.bs.modal', () => {
               alert('新增成功');
               renderPage();
             });
@@ -88,7 +88,7 @@
         success(res) {
           if (res.code === 200) {
             $('#articleCategoryModal').modal('hide');
-            $('#articleCategoryModal').off('hidden.bs.modal').on('hidden.bs.modal', () => {
+            $('#articleCategoryModal').on('hidden.bs.modal', () => {
               alert('修改成功');
               renderPage();
             });
@@ -101,6 +101,8 @@
   }
 
   function handleConfirm(cb) {
+    // 每次点击新增或编辑都会解绑 hidden.bs.modal 事件，避免冲突
+    $('#articleCategoryModal').off('hidden.bs.modal');
     $('#confirmBtn').off().click(() => {
       // 获取表单输入值
       const name = $('#recipientName').val().trim();
@@ -114,7 +116,6 @@
       cb(name, slug);
     });
   }
-
 
   $('#articleCategoryTable').on('click', '.btn-del', e => {
     if (confirm('真的要删除这条分类吗？')) {
