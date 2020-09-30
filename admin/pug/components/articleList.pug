@@ -1,4 +1,13 @@
 if articles
+  -
+    // 按时间降序渲染文章顺序
+    articles.sort((a, b) => {
+      const datea = new Date(a.date);
+      const dateb = new Date(b.date);
+      timea = datea.getTime();
+      timeb = dateb.getTime();
+      return timeb - timea;
+    });
   each article in articles
     tr
       td= article.title
