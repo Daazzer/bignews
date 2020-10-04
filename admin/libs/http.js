@@ -32,10 +32,14 @@
     article_search: baseURL + '/admin/article/search',//文章信息查询
     article_edit: baseURL + '/admin/article/edit',//文章编辑
     article_delete: baseURL + '/admin/article/delete',//文章删除
-    comment_list: baseURL + '/admin/comment/search',//文章评论列表
+    comment_search: baseURL + '/admin/comment/search',//文章评论列表
     comment_pass: baseURL + '/admin/comment/pass',//文章评论通过
     comment_reject: baseURL + '/admin/comment/reject',//文章评论不通过
     comment_delete: baseURL + '/admin/comment/delete',//文章评论删除
+    data_info: baseURL + '/admin/data/info',//获取统计数据
+    data_article: baseURL + '/admin/data/article',//日新增文章数量统计
+    data_category: baseURL + '/admin/data/category',//各类型文章数量统计
+    data_visit: baseURL + '/admin/data/visit',//日文章访问量
   };
   //暴露接口
   w.bignews = bignews;
