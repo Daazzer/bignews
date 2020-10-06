@@ -30,7 +30,7 @@ $.ajax({
 $.ajax({
   url: window.bignews.data_category,
   success(res) {
-    console.log(res);
+    // console.log(res);
     if (res.code === 200) {
       loadPie(res.date);
     }

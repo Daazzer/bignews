@@ -1,0 +1,21 @@
+if comments
+  each comment in comments
+    tr
+      td= comment.author
+      td= comment.content
+      td= comment.title
+      td= comment.date + ' ' + comment.time
+      td= comment.state
+      td.text-center
+        if comment.state === '已通过'
+          |
+          |
+          a.btn.btn-warning.btn-xs.btn-reject(href="javascript:void(0);" data-id=comment.id) 拒绝
+        else if comment.state === '待审核'
+          |
+          |
+          a.btn.btn-info.btn-xs.btn-pass(href="javascript:void(0);" data-id=comment.id) 批准
+        |
+        |
+        a.btn.btn-danger.btn-xs.btn-delete(href="javascript:void(0);" data-id=comment.id) 删除
+else
