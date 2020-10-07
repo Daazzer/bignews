@@ -42,7 +42,7 @@
   function setPaginatior(currentPage, totalPages) {
     $('.pagination').bootstrapPaginator({
       //设置版本号
-      bootstrapMajorVersion: 1,
+      bootstrapMajorVersion: 3,
       // 显示第几页
       currentPage,
       // 总页数

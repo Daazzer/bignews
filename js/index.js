@@ -59,7 +59,6 @@
   $.ajax({
     url: window.bignews.index_attention,
     success(res) {
-      console.log(res);
       if (res.code === 200) {
         const attentionListHTML = window.attentionList({ attentionItems: res.data });
         $('.guanzhu_list').html(attentionListHTML);

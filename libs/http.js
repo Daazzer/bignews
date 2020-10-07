@@ -8,7 +8,7 @@
     index_latest: baseURL + '/index/latest',//最新资讯
     index_latest_comment: baseURL + '/index/latest_comment',//最新评论
     index_attention: baseURL + '/index/attention',//焦点关注
-    index_artitle: baseURL + '/index/artitle',//文章详细内容
+    index_article: baseURL + '/index/article',//文章详细内容
     index_post_comment: baseURL + '/index/post_comment',//发表评论
     index_get_comment: baseURL + '/index/get_comment' //评论列表
   };
