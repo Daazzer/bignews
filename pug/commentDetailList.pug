@@ -1,0 +1,7 @@
+each commentItem in commentItems
+  .comment_detail_list
+    .person_pic.fl= commentItem.author.substr(0, 1)
+    .name_time.fl
+      b= commentItem.author
+      span= commentItem.date
+    .comment_text.fl= commentItem.content
