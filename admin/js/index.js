@@ -12,14 +12,14 @@
   });
 
   // 用户登出
-  $('#logout').click(() => {
+  $('body').on('click', '#logout', () => {
     if (confirm('真的要退出吗？')) {
       window.localStorage.removeItem('bignews_token');
       window.location.href = 'login.html';
     }
   });
 
-  $('.level01').click(e => {
+  $('body').on('click', '.level01', e => {
     $('.level01').removeClass('active');
     $(e.currentTarget).addClass('active');
 
@@ -34,7 +34,7 @@
     }
   });
 
-  $('.level02 li').click(e => {
-    $(e.currentTarget).addClass('active').siblings().removeClass('active');
-  });
+  $('body').on('click', '.level02 li', e => $(e.currentTarget).addClass('active').siblings().removeClass('active'));
+
+  $('body').on('click', '#headerUserCenterBtn', () => $('#user')[0].click());
 })();
