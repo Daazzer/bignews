@@ -1,0 +1,15 @@
+each hotrankItem, index in hotrankItems
+  li
+    case index
+      when 0
+        span.first #{index + 1}
+        a(href=`article.html?id=${hotrankItem.id}`)= hotrankItem.title
+      when 1
+        span.second #{index + 1}
+        a(href=`article.html?id=${hotrankItem.id}`)= hotrankItem.title
+      when 2
+        span.third #{index + 1}
+        a(href=`article.html?id=${hotrankItem.id}`)= hotrankItem.title
+      default
+        span #{index + 1}
+        a(href=`article.html?id=${hotrankItem.id}`)= hotrankItem.title

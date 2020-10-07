@@ -1,0 +1,5 @@
+each picture, index in pictures
+  li(class=index===0 ? 'first': '')
+    a(href=`article.html?id=${picture.id}`)
+      img(src=picture.cover alt="newsPic")
+    p= picture.title

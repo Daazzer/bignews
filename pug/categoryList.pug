@@ -1,0 +1,4 @@
+li.up
+each categoryItem in categoryItems
+  li
+    a(href=`list.html?id=${categoryItem.id}&name=${categoryItem.name}`)= categoryItem.name

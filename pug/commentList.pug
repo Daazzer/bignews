@@ -1,0 +1,15 @@
+each comment in comments
+  li
+    |
+    |
+    span= comment.author.substr(0, 1)
+    |
+    |
+    b.
+      #[em= comment.author]
+      #{comment.date}说:
+    |
+    |
+    strong= comment.intro
+    |
+    |

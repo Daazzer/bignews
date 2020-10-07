@@ -1,0 +1,19 @@
+each commonNewsItem in commonNewsItems
+  .common_news_list
+    a.list_pic(href=`article.html?id=${commonNewsItem.id}`)
+      img(src=commonNewsItem.cover alt="commonNewsPic")
+    h4
+      a(href=`article.html?id=${commonNewsItem.id}`)= commonNewsItem.title
+    p!= commonNewsItem.intro
+    .new_info
+      |
+      |
+      span.
+        标签：#{commonNewsItem.category}&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+        #[i.fa.fa-eye]
+        &nbsp;阅读( #{commonNewsItem.read} )&nbsp;&nbsp;&nbsp;
+        #[i.fa.fa-commenting]
+        &nbsp;评论( #{commonNewsItem.comments} )
+      |
+      |
+      b 发布于 #{commonNewsItem.date}
