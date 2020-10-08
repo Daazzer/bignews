@@ -16,7 +16,6 @@
       selector: '#articleContent',
       height: '350px',
       language: 'zh_CN',
-      directionality: 'ltr',
       browser_spellcheck: true,
       contextmenu: false,
       plugins: [
