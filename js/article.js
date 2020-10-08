@@ -108,4 +108,15 @@
       }
     });
   });
+
+  $('.search_btn').click(e => {
+    const key = $('.search_txt').val().trim();
+
+    if (key === '') {
+      alert('搜索内容不能为空');
+      return;
+    }
+
+    window.location.href = `list.html?key=${key}`;
+  });
 })();
