@@ -64,7 +64,7 @@
   }
 
   $('body').on('click', '.btn-pass, .btn-reject, .btn-delete', e => {
-    const id = $(e.currentTarget).attr('data-id');
+    const id = $(e.currentTarget).data('id');
 
     let url = '';
     let msg = '';
