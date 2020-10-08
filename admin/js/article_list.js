@@ -92,7 +92,7 @@
   // 删除文章
   $('#acticleTable').on('click', '.delete', e => {
     if (confirm('真的要删除此文章吗？')) {
-      const id = e.target.dataset.id;
+      const id = $(e.target).data('id');
       $.ajax({
         type: 'post',
         url: window.bignews.article_delete,
