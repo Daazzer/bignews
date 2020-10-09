@@ -1,3 +1,5 @@
 if article
-  |上一篇： #[a(href=`article.html?id=${article.prev.id}`)= article.prev.title]#[br]
-  |下一篇： #[a(href=`article.html?id=${article.next.id}`)= article.next.title]
+  if article.prev
+    |上一篇： #[a(href=`article.html?id=${article.prev.id}`)= article.prev.title]#[br]
+  if article.next
+    |下一篇： #[a(href=`article.html?id=${article.next.id}`)= article.next.title]
