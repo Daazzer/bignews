@@ -48,18 +48,14 @@
       // 总页数
       totalPages,
       tooltipTitles(type, page) {
-        switch (type) {
-          case 'first':
-            return '第一页';
-          case 'prev':
-            return '上一页';
-          case 'next':
-            return '下一页';
-          case 'last':
-            return '最后一页';
-          case 'page':
-            return `第${page}页`;
-        }
+        const typeName = {
+          first: '第一页',
+          prev: '上一页',
+          next: '下一页',
+          last: '最后一页',
+          page: `第${page}页`
+        };
+        return typeName[type];
       },
       // 当单击操作按钮的时候, 执行该函数, 调用ajax渲染页面
       onPageClicked(event, originalEvent, type, page) {
