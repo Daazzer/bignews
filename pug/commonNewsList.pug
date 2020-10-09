@@ -4,10 +4,14 @@ each commonNewsItem in commonNewsItems
       img(src=commonNewsItem.cover alt="commonNewsPic")
     h4
       a(href=`article.html?id=${commonNewsItem.id}`)= commonNewsItem.title
-    if commonNewsItem.intro.indexOf('<p>') !== -1
-      != commonNewsItem.intro
-    else
-      p= commonNewsItem.intro
+    -
+      let intro = commonNewsItem.intro;
+      let index = intro.indexOf('<p>');
+      if (index !== -1) {
+        index += 3;
+        intro = intro.substr(index, 20) + '...';
+      }
+    p!= intro
     .new_info
       |
       |
